@@ -1,0 +1,20 @@
+# sbt
+bin/
+project/project/
+project/target/
+project/.bloop
+.bsp/
+target/
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+# mac
+.DS_Store
+
+#general
+*.class
