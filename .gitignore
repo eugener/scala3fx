@@ -2,8 +2,12 @@
 bin/
 project/project/
 project/target/
+project/bloop/
 project/.bloop
 .bsp/
+.idea/
+.metals/
+.vscode/
 target/
 
 # intellij idea
