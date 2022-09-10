@@ -23,10 +23,12 @@ import org.w3c.dom.events.MouseEvent
 
 class MyApp extends Application {
 
-    val title = "Scala 3\nand\nJavaFX"
+    // this is set during SBT build
+    val version: String = System.getProperty("scala.version")
+
+    val title = s"Scala $version\nwith\nJavaFX"
 
     override def start(stage: Stage): Unit =  {
-
 
         val text = new Text()
         text.setStyle(
@@ -56,7 +58,7 @@ class MyApp extends Application {
         )
         timeline.getKeyFrames.add(keyFrame)
         timeline.setCycleCount(Animation.INDEFINITE)
-        timeline.play
+        timeline.play()
 
     }
     

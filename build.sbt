@@ -1,7 +1,12 @@
 import sbt.Keys.libraryDependencies
 
-val scala3Version = "3.0.2"
+val scala3Version = {
+    val version = "3.2.0"
+    System.setProperty("scala.version", version)
+    version
+}
 val fxVersion = "16"
+
 
 val projectName = "scala3fx"
 val projectVersion = "0.1.0"
@@ -24,8 +29,9 @@ lazy val root = project
       version := projectVersion,
       scalaVersion := scala3Version,
       libraryDependencies ++= fxModules
-        .map { m => "org.openjfx" % s"javafx-$m" % fxVersion classifier osName.value }
+        .map { m => "org.openjfx" % s"javafx-$m" % fxVersion classifier osName.value },
       //    libraryDependencies +=  "com.novocode" % "junit-interface" % "0.11" % "test"
+
   )
 
 //    run / fork := true
